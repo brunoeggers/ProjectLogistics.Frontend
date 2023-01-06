@@ -17,7 +17,7 @@ import * as Yup from "yup";
 
 import Page from "../Utils/Page";
 
-const libraries = ["places"];
+const googleLibraries = ["places"];
 
 const RegisterPackage = (props) => {
   const [slots, setSlots] = useState([]);
@@ -56,7 +56,7 @@ const RegisterPackage = (props) => {
   // start Google Maps api
   const googleMaps = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    libraries,
+    libraries: googleLibraries,
   });
   const google = window.google;
 

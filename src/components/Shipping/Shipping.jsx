@@ -25,7 +25,7 @@ const Shipping = () => {
 
   const googleMaps = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-    googleLibraries,
+    libraries: googleLibraries,
   });
 
   useEffect(() => {
