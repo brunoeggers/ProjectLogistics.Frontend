@@ -61,7 +61,12 @@ const PackageDetails = (props) => {
             return Promise.reject(error);
           }
 
-          props.callback();
+          if (typeof props.callback === "function") {
+            props.callback();
+          } else {
+            setLoading(true);
+            getWarehouseData();
+          }
         })
         .catch((error) => {
           setErrorMessage(error.toString());
@@ -93,8 +98,12 @@ const PackageDetails = (props) => {
             return Promise.reject(error);
           }
 
-          props.callback();
-          //this.setState({ postId: data.id });
+          if (typeof props.callback === "function") {
+            props.callback();
+          } else {
+            setLoading(true);
+            getWarehouseData();
+          }
         })
         .catch((error) => {
           setErrorMessage(error.toString());
@@ -172,12 +181,19 @@ const PackageDetails = (props) => {
         justifyContent="center"
         alignItems="center"
       >
-        <Button href={`/packages/shipping/${packageId}`} variant="contained">
-          View Route
-        </Button>
-        <Button onClick={() => confirmDelivered()} variant="contained">
-          Mark as shipped
-        </Button>
+        {packageDetails.status == 0 && (
+          <React.Fragment>
+            <Button
+              href={`/packages/shipping/${packageId}`}
+              variant="contained"
+            >
+              View Route
+            </Button>
+            <Button onClick={() => confirmDelivered()} variant="contained">
+              Mark as shipped
+            </Button>
+          </React.Fragment>
+        )}
         <Button onClick={() => confirmDeletion()} variant="contained">
           Delete
         </Button>
