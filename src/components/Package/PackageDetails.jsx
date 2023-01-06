@@ -9,12 +9,14 @@ import {
 import { Box } from "@mui/system";
 
 import Page from "../Utils/Page";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 
 const PackageDetails = (props) => {
   const [loading, setLoading] = useState(true);
   const [packageDetails, setPackageDetails] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
 
   // get packageId from url or props
   const params = useParams();
@@ -64,8 +66,7 @@ const PackageDetails = (props) => {
           if (typeof props.callback === "function") {
             props.callback();
           } else {
-            setLoading(true);
-            getWarehouseData();
+            navigate("/packages");
           }
         })
         .catch((error) => {
