@@ -1,0 +1,47 @@
+.aisles {
+  overflow-y: auto;
+}
+
+.aisle {
+  display: flex;
+  margin: 15px;
+}
+.aisle-title {
+  color: rgb(73, 73, 73);
+  font-size: 0.7em;
+  text-align: center;
+  min-width: 40px;
+  margin-right: 15px;
+}
+
+.aisle-title span {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.aisle .shelf {
+  cursor: pointer;
+  display: flex;
+  margin: 0 2px;
+  border: 1px dashed black;
+
+  min-width: 120px;
+  min-height: 50px;
+  background-color: rgb(216, 216, 216);
+  align-items: center;
+}
+
+.aisle .shelf.free {
+  background-color: rgb(1, 153, 13);
+  color: white;
+}
+
+.aisle .shelf .shelf-inner {
+  width: 100%;
+  text-align: center;
+}
+
+.aisle .shelf .shelf-inner .tracking {
+  font-size: 0.8em;
+}
