@@ -1,6 +1,25 @@
-# Getting Started with Create React App
+# Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository is for the frontend.
+
+For the backend, go to <https://github.com/brunoeggers/ProjectLogistics.Backend>
+
+## Tech Stack
+
+React
+
+Google Maps API
+
+## Setup
+
+1. Clone this repository
+2. Open a terminal and navigate to the project's folder
+3. Run npm i
+4. Open the project in Visual Studio Code
+5. Create a file called .env in the root of the project
+6. Add the following line, replacing <API_KEY> with the sent one via e-mail
+   > REACT_APP_GOOGLE_MAPS_API_KEY=<API_KEY>
+7.
 
 ## Available Scripts
 
